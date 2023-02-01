@@ -1,0 +1,10 @@
+CREATE TABLE LifebookType (
+  id INT  PRIMARY KEY,
+  Type VARCHAR(50),
+  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO LifebookType (Type)
+VALUES ('Baby Lifebook'),
+       ('School Lifebook'),
+       ('Campus Lifebook');
