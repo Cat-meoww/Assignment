@@ -2,7 +2,7 @@
 
 namespace Config;
 
-// Create a new instance of our RouteCollection class.
+// Create  a new instance of our RouteCollection class.
 $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
@@ -44,14 +44,17 @@ $routes->group('auth', function ($routes) {
 });
 $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
     $routes->add('dashboard', 'admin::index');
-    $routes->add('profile/(:any)', 'admin::profile/$1');
+    //$routes->add('profile/(:any)', 'admin::profile/$1');
+    $routes->add('Type/(:num)/Theme/(:num)/edit', 'admin::EditTheme/$1/$2');
+    $routes->add('Themes/(:num)', 'admin::Type/$1');
+    $routes->add('Edit/(:any)', 'admin::PreviewBook/$1');
+   
+    
     
 });
 $routes->group('api', ['namespace' => 'App\Controllers\Api'], static function ($routes) {
-    $routes->post('add-employee', 'admin::addemployee');
-    $routes->post('add-rating', 'admin::add_rating');
-    $routes->post('delete-emp', 'admin::delete_emp');
-    $routes->post('datatable/show-employee', 'admin::show_employees');
+    $routes->post('savedata', 'admin::savedata');
+    
 });
 
 /*

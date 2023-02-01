@@ -1,0 +1,256 @@
+ERROR - 2023-02-01 09:25:56 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:171
+Stack trace:
+#0 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(171): mysqli->real_connect('localhost', 'root', 'mariadb', 'TEST', 3306, '', 0)
+#1 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /workspaces/Assignment/vendor/codeigniter4/framework/system/Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+#5 /workspaces/Assignment/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#6 /workspaces/Assignment/app/Validation/UserRules.php(12): CodeIgniter\BaseModel->first()
+#7 /workspaces/Assignment/vendor/codeigniter4/framework/system/Validation/Validation.php(315): App\Validation\UserRules->validate_user('admin123', 'email,password', Array, NULL, 'password')
+#8 /workspaces/Assignment/vendor/codeigniter4/framework/system/Validation/Validation.php(175): CodeIgniter\Validation\Validation->processRules('password', 'password', 'admin123', Array, Array)
+#9 /workspaces/Assignment/vendor/codeigniter4/framework/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#10 /workspaces/Assignment/app/Controllers/Login.php(35): CodeIgniter\Controller->validate(Array, Array)
+#11 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(925): App\Controllers\Login->auth_check()
+#12 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#13 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 /workspaces/Assignment/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#15 /workspaces/Assignment/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/workspaces/Ass...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:215
+Stack trace:
+#0 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /workspaces/Assignment/vendor/codeigniter4/framework/system/Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+#4 /workspaces/Assignment/vendor/codeigniter4/framework/system/BaseModel.php(624): CodeIgniter\Model->doFirst()
+#5 /workspaces/Assignment/app/Validation/UserRules.php(12): CodeIgniter\BaseModel->first()
+#6 /workspaces/Assignment/vendor/codeigniter4/framework/system/Validation/Validation.php(315): App\Validation\UserRules->validate_user('admin123', 'email,password', Array, NULL, 'password')
+#7 /workspaces/Assignment/vendor/codeigniter4/framework/system/Validation/Validation.php(175): CodeIgniter\Validation\Validation->processRules('password', 'password', 'admin123', Array, Array)
+#8 /workspaces/Assignment/vendor/codeigniter4/framework/system/Controller.php(140): CodeIgniter\Validation\Validation->run()
+#9 /workspaces/Assignment/app/Controllers/Login.php(35): CodeIgniter\Controller->validate(Array, Array)
+#10 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(925): App\Controllers\Login->auth_check()
+#11 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#12 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /workspaces/Assignment/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#14 /workspaces/Assignment/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/workspaces/Ass...')
+#15 {main}
+CRITICAL - 2023-02-01 09:25:56 --> Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+in SYSTEMPATH/Database/BaseConnection.php on line 418.
+ 1 SYSTEMPATH/Database/BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(624): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Validation/UserRules.php(12): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/Validation/Validation.php(315): App\Validation\UserRules->validate_user('admin123', 'email,password', [...], null, 'password')
+ 7 SYSTEMPATH/Validation/Validation.php(175): CodeIgniter\Validation\Validation->processRules('password', 'password', 'admin123', [...], [...])
+ 8 SYSTEMPATH/Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH/Controllers/Login.php(35): CodeIgniter\Controller->validate([...], [...])
+10 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Login->auth_check()
+11 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+12 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+ERROR - 2023-02-01 09:26:38 --> mysqli_sql_exception: Table 'TEST.employees' doesn't exist in /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:292
+Stack trace:
+#0 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(292): mysqli->query('SELECT CAST(AVG...', 0)
+#1 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CAST(AVG...')
+#2 /workspaces/Assignment/vendor/codeigniter4/framework/system/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CAST(AVG...')
+#3 /workspaces/Assignment/app/Controllers/Api/admin.php(111): CodeIgniter\Database\BaseConnection->query('SELECT CAST(AVG...')
+#4 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(925): App\Controllers\Api\admin->show_employees()
+#5 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+#6 /workspaces/Assignment/vendor/codeigniter4/framework/system/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /workspaces/Assignment/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#8 /workspaces/Assignment/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(47): require_once('/workspaces/Ass...')
+#9 {main}
+CRITICAL - 2023-02-01 09:26:38 --> Table 'TEST.employees' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query('SELECT CAST(AVG(rating) AS DECIMAL(10,2)) as avgrating, 
+        e.*, TIMESTAMPDIFF(YEAR, e.dob, CURDATE()) as age
+        FROM employees as e 
+        LEFT JOIN ratings as r ON  e.emp_id=r.employee_id 
+        WHERE e.id !=0 ', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CAST(AVG(rating) AS DECIMAL(10,2)) as avgrating, 
+        e.*, TIMESTAMPDIFF(YEAR, e.dob, CURDATE()) as age
+        FROM employees as e 
+        LEFT JOIN ratings as r ON  e.emp_id=r.employee_id 
+        WHERE e.id !=0 ')
+ 3 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CAST(AVG(rating) AS DECIMAL(10,2)) as avgrating, 
+        e.*, TIMESTAMPDIFF(YEAR, e.dob, CURDATE()) as age
+        FROM employees as e 
+        LEFT JOIN ratings as r ON  e.emp_id=r.employee_id 
+        WHERE e.id !=0 ')
+ 4 APPPATH/Controllers/Api/admin.php(111): CodeIgniter\Database\BaseConnection->query('SELECT CAST(AVG(rating) AS DECIMAL(10,2)) as avgrating, 
+        e.*, TIMESTAMPDIFF(YEAR, e.dob, CURDATE()) as age
+        FROM employees as e 
+        LEFT JOIN ratings as r ON  e.emp_id=r.employee_id 
+        WHERE e.id !=0 ')
+ 5 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Api\admin->show_employees()
+ 6 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 09:45:41 --> syntax error, unexpected token "endforeach", expecting end of file
+in APPPATH/Views/admin/dashboard.php on line 28.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 3 APPPATH/Controllers/Admin/admin.php(26): view('admin/dashboard', [...])
+ 4 APPPATH/Controllers/Admin/admin.php(20): App\Controllers\admin\Admin->dashboard()
+ 5 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->index()
+ 6 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 09:48:14 --> Cannot use object of type stdClass as array
+in APPPATH/Views/admin/dashboard.php on line 26.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 4 APPPATH/Controllers/Admin/admin.php(26): view('admin/dashboard', [...])
+ 5 APPPATH/Controllers/Admin/admin.php(20): App\Controllers\admin\Admin->dashboard()
+ 6 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->index()
+ 7 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 10:20:43 --> Invalid file: admin/Themes.php
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 33.
+ 1 SYSTEMPATH/View/View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Themes.php')
+ 2 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/Themes', [], true)
+ 3 APPPATH/Controllers/Admin/admin.php(31): view('admin/Themes', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->Type('1')
+ 5 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 10:27:21 --> Undefined property: stdClass::$name
+in APPPATH/Views/admin/Themes.php on line 14.
+ 1 APPPATH/Views/admin/Themes.php(14): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$name', 'APPPATH/Views/admin/Themes.php', 14)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/Themes.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/Themes', [], true)
+ 5 APPPATH/Controllers/Admin/admin.php(34): view('admin/Themes', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->Type('1')
+ 7 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 10:28:46 --> Undefined variable $title
+in APPPATH/Views/layout/main.php on line 24.
+ 1 APPPATH/Views/layout/main.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH/Views/layout/main.php', 24)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/layout/main.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('layout/main', [], true)
+ 5 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/Themes', [], true)
+ 6 APPPATH/Controllers/Admin/admin.php(34): view('admin/Themes', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->Type('1')
+ 8 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 9 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 10:35:38 --> Object of class stdClass could not be converted to string
+in APPPATH/Views/admin/Themes.php on line 12.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/Themes', [], true)
+ 4 APPPATH/Controllers/Admin/admin.php(35): view('admin/Themes', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->Type('1')
+ 6 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 11:05:37 --> Undefined variable $title
+in APPPATH/Views/layout/main.php on line 24.
+ 1 APPPATH/Views/layout/main.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH/Views/layout/main.php', 24)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/layout/main.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->render('layout/main', [], true)
+ 5 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/theme/theme1', [], true)
+ 6 APPPATH/Controllers/Admin/admin.php(45): view('admin/theme/theme1', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->EditTheme('2', '1')
+ 8 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 9 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 12:42:45 --> Undefined variable $Booktype
+in APPPATH/Views/admin/theme/theme1.php on line 200.
+ 1 APPPATH/Views/admin/theme/theme1.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Booktype', 'APPPATH/Views/admin/theme/theme1.php', 200)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/theme/theme1.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/theme/theme1', [], true)
+ 5 APPPATH/Controllers/Admin/admin.php(48): view('admin/theme/theme1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->EditTheme('2', '1')
+ 7 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 12:43:50 --> Undefined variable $Booktype
+in APPPATH/Views/admin/theme/theme1.php on line 200.
+ 1 APPPATH/Views/admin/theme/theme1.php(200): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Booktype', 'APPPATH/Views/admin/theme/theme1.php', 200)
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/theme/theme1.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/theme/theme1', [], true)
+ 5 APPPATH/Controllers/Admin/admin.php(49): view('admin/theme/theme1', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->EditTheme('2', '1')
+ 7 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 12:44:27 --> Object of class stdClass could not be converted to string
+in APPPATH/Views/admin/theme/theme1.php on line 200.
+ 1 SYSTEMPATH/View/View.php(213): include()
+ 2 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render('admin/theme/theme1', [], true)
+ 4 APPPATH/Controllers/Admin/admin.php(49): view('admin/theme/theme1', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->EditTheme('2', '1')
+ 6 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 13:11:24 --> Call to a member function listErrors() on null
+in APPPATH/Controllers/Api/admin.php on line 33.
+ 1 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Api\admin->savedata()
+ 2 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 13:13:11 --> Call to a member function listErrors() on null
+in APPPATH/Controllers/Api/admin.php on line 33.
+ 1 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Api\admin->savedata()
+ 2 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 13:16:03 --> Call to a member function listErrors() on null
+in APPPATH/Controllers/Api/admin.php on line 33.
+ 1 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Api\admin->savedata()
+ 2 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 13:48:35 --> Object of class stdClass could not be converted to string
+in SYSTEMPATH/Database/Query.php on line 335.
+ 1 SYSTEMPATH/Database/Query.php(335): strtr('INSERT INTO `LifebookStore` (`Created_by`, `UUID`, `Theme`, `Type`, `data`) VALUES (:Created_by:, :UUID:, :Theme:, :Type:, :data:)', [...])
+ 2 SYSTEMPATH/Database/Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `LifebookStore` (`Created_by`, `UUID`, `Theme`, `Type`, `data`) VALUES (:Created_by:, :UUID:, :Theme:, :Type:, :data:)', [...])
+ 3 SYSTEMPATH/Database/Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 4 SYSTEMPATH/Database/BaseConnection.php(593): CodeIgniter\Database\Query->getQuery()
+ 5 SYSTEMPATH/Database/BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `LifebookStore` (`Created_by`, `UUID`, `Theme`, `Type`, `data`) VALUES (:Created_by:, :UUID:, :Theme:, :Type:, :data:)', [...], false)
+ 6 APPPATH/Controllers/Api/admin.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 7 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\Api\admin->savedata()
+ 8 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\admin))
+ 9 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
+CRITICAL - 2023-02-01 14:36:49 --> Undefined variable $Booktheme
+in APPPATH/Controllers/Admin/admin.php on line 72.
+ 1 APPPATH/Controllers/Admin/admin.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Booktheme', 'APPPATH/Controllers/Admin/admin.php', 72)
+ 2 SYSTEMPATH/CodeIgniter.php(925): App\Controllers\admin\Admin->PreviewBook('747ef7f68d')
+ 3 SYSTEMPATH/CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\admin\Admin))
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('FCPATH/index.php')
