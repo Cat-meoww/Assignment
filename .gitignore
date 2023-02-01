@@ -2,6 +2,8 @@
 */logs/log-*.php
 !*/logs/index.html
 */cache/*
+*/debugbar/*
+*/session/*
 !*/cache/index.html
 !*/cache/.htaccess
 
